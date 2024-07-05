@@ -1,0 +1,28 @@
+/* src/styles/global.css */
+body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  max-height: 980px; /* 화면 높이 제한 */
+}
+
+#falling-text-container {
+  position: fixed;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 9998; /* 커서 보다 한단계 높음 */
+}
+
+.falling-text {
+  position: absolute;
+  left: 0;
+  animation: fall 2s forwards;
+}
+
+@keyframes fall {
+  to {
+    transform: translateY(calc(100vh - 100px)); /* 100px 마진 적용 */
+    opacity: 0;
+  }
+}
